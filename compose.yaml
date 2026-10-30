@@ -1,0 +1,12 @@
+services:
+  backend:
+    build: .
+    container_name: stars_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - PYTHONUNBUFFERED=1
+      - UV_NO_DEV=1
+      - SQLITE_PATH=/app/data/db.sqlite3
