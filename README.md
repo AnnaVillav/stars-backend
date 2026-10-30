@@ -5,8 +5,6 @@ API REST de STARS, tienda de instrumentos musicales. EFI 2026 - Ingeniería de S
 
 ## Diseño de la base de datos
 
-La base de datos de STARS fue planificada mediante
-un diagrama entidad-relación realizado en dbdiagram.io.
 
 El sistema cuenta con 10 modelos propios relacionados
 entre sí: Categoria, Marca, Proveedor, Producto,
