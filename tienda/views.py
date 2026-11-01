@@ -56,6 +56,11 @@ class ProductoViewSet(viewsets.ModelViewSet):
     queryset = Producto.objects.all()
     serializer_class = ProductoSerializer
 
+    filterset_fields = ["categoria", "marca", "activo"]
+    search_fields = ["nombre", "descripcion"]
+    ordering_fields = ["precio", "stock", "nombre"]
+    ordering = ["nombre"]
+
     def get_serializer_class(self):
         if self.action in ["list", "ofertas", "bajo_stock"]:
             return ProductoDetalleSerializer
