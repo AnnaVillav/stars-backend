@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from rest_framework import viewsets
+from django.db.models import F
+from rest_framework.decorators import action
+from rest_framework.response import Response
 
 from .models import (
     Categoria,
@@ -30,12 +33,10 @@ from .serializers import (
 )
 
 
-# Vista principal de bienvenida (BACK-008)
 def bienvenida(request):
     return render(request, "tienda/bienvenida.html")
 
 
-# ViewSets de la API REST (BACK-010)
 class CategoriaViewSet(viewsets.ModelViewSet):
     queryset = Categoria.objects.all()
     serializer_class = CategoriaSerializer
@@ -56,9 +57,28 @@ class ProductoViewSet(viewsets.ModelViewSet):
     serializer_class = ProductoSerializer
 
     def get_serializer_class(self):
-        if self.action == "list":
+        if self.action in ["list", "ofertas", "bajo_stock"]:
             return ProductoDetalleSerializer
         return ProductoSerializer
+
+    @action(detail=False, methods=["get"], url_path="ofertas")
+    def ofertas(self, request):
+        productos = self.get_queryset().filter(
+            activo=True,
+            precio_oferta__isnull=False,
+            precio_oferta__lt=F("precio")
+        )
+        serializer = self.get_serializer(productos, many=True)
+        return Response(serializer.data)
+
+    @action(detail=False, methods=["get"], url_path="bajo-stock")
+    def bajo_stock(self, request):
+        productos = self.get_queryset().filter(
+            activo=True,
+            stock__lte=5
+        )
+        serializer = self.get_serializer(productos, many=True)
+        return Response(serializer.data)
 
 
 class ImagenProductoViewSet(viewsets.ModelViewSet):
