@@ -1,0 +1,342 @@
+[
+{
+  "model": "tienda.categoria",
+  "pk": 1,
+  "fields": {
+    "nombre": "Guitarras",
+    "descripcion": "Guitarras eléctricas, acústicas y clásicas",
+    "activa": true
+  }
+},
+{
+  "model": "tienda.categoria",
+  "pk": 2,
+  "fields": {
+    "nombre": "Teclados",
+    "descripcion": "Pianos, teclados y sintetizadores",
+    "activa": true
+  }
+},
+{
+  "model": "tienda.categoria",
+  "pk": 3,
+  "fields": {
+    "nombre": "Bajos",
+    "descripcion": "Bajo eléctrico Jazz Bass",
+    "activa": true
+  }
+},
+{
+  "model": "tienda.categoria",
+  "pk": 4,
+  "fields": {
+    "nombre": "Baterias",
+    "descripcion": "Batería Imperialstar",
+    "activa": true
+  }
+},
+{
+  "model": "tienda.categoria",
+  "pk": 5,
+  "fields": {
+    "nombre": "Percusión",
+    "descripcion": "Instrumentos de percusión",
+    "activa": true
+  }
+},
+{
+  "model": "tienda.categoria",
+  "pk": 6,
+  "fields": {
+    "nombre": "Microfonos",
+    "descripcion": "Micrófonos para voces e instrumentos",
+    "activa": true
+  }
+},
+{
+  "model": "tienda.categoria",
+  "pk": 7,
+  "fields": {
+    "nombre": "Amplificadores",
+    "descripcion": "Amplificadores para instrumentos musicales",
+    "activa": true
+  }
+},
+{
+  "model": "tienda.categoria",
+  "pk": 8,
+  "fields": {
+    "nombre": "Accesorios",
+    "descripcion": "Accesorios para instrumentos musicales",
+    "activa": true
+  }
+},
+{
+  "model": "tienda.marca",
+  "pk": 1,
+  "fields": {
+    "nombre": "Yamaha",
+    "descripcion": "Marca de instrumentos musicales y equipos de audio"
+  }
+},
+{
+  "model": "tienda.marca",
+  "pk": 2,
+  "fields": {
+    "nombre": "Squier",
+    "descripcion": "Guitarras eléctricas y bajos"
+  }
+},
+{
+  "model": "tienda.marca",
+  "pk": 3,
+  "fields": {
+    "nombre": "Casio",
+    "descripcion": "Teclados y pianos digitales"
+  }
+},
+{
+  "model": "tienda.marca",
+  "pk": 4,
+  "fields": {
+    "nombre": "Tama",
+    "descripcion": "Baterías e instrumentos de percusión"
+  }
+},
+{
+  "model": "tienda.marca",
+  "pk": 5,
+  "fields": {
+    "nombre": "Meinl",
+    "descripcion": "Instrumentos de percusión"
+  }
+},
+{
+  "model": "tienda.marca",
+  "pk": 6,
+  "fields": {
+    "nombre": "Shure",
+    "descripcion": "Micrófonos y equipos de audio"
+  }
+},
+{
+  "model": "tienda.marca",
+  "pk": 7,
+  "fields": {
+    "nombre": "Boss",
+    "descripcion": "Pedales, afinadores y accesorios musicales"
+  }
+},
+{
+  "model": "tienda.marca",
+  "pk": 8,
+  "fields": {
+    "nombre": "Fender",
+    "descripcion": "Guitarras y amplificadores"
+  }
+},
+{
+  "model": "tienda.proveedor",
+  "pk": 1,
+  "fields": {
+    "nombre": "Distribuidora Musical STARS",
+    "email": "proveedor@example.com",
+    "telefono": "3584000000"
+  }
+},
+{
+  "model": "tienda.proveedor",
+  "pk": 2,
+  "fields": {
+    "nombre": "Instrumentos del Centro",
+    "email": "ventas@instrumentosdelcentro.com",
+    "telefono": "3584001101"
+  }
+},
+{
+  "model": "tienda.proveedor",
+  "pk": 3,
+  "fields": {
+    "nombre": "Audio Profesional STARS",
+    "email": "contacto@audiostars.com",
+    "telefono": "3584001102"
+  }
+},
+{
+  "model": "tienda.proveedor",
+  "pk": 4,
+  "fields": {
+    "nombre": "Distribuidora Ritmo Musical",
+    "email": "ventas@ritmomusical.com",
+    "telefono": "3584001103"
+  }
+},
+{
+  "model": "tienda.proveedor",
+  "pk": 5,
+  "fields": {
+    "nombre": "Distribuidora Ritmo Musical",
+    "email": "ventas@ritmomusical.com",
+    "telefono": "3584001103"
+  }
+},
+{
+  "model": "tienda.proveedor",
+  "pk": 6,
+  "fields": {
+    "nombre": "Audio Profesional STARS",
+    "email": "contacto@audiostars.com",
+    "telefono": "3584001102"
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 1,
+  "fields": {
+    "nombre": "Guitarra acústica Yamaha F310",
+    "descripcion": "Guitarra acústica de seis cuerdas, ideal para principiantes.",
+    "precio": "250000.00",
+    "precio_oferta": "225000.00",
+    "stock": 10,
+    "activo": true,
+    "categoria": 1,
+    "marca": 1,
+    "proveedor": 1
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 2,
+  "fields": {
+    "nombre": "Guitarra eléctrica Stratocaster",
+    "descripcion": "Guitarra eléctrica de 6 cuerdas, ideal para rock y pop",
+    "precio": "450000.00",
+    "precio_oferta": "420000.00",
+    "stock": 8,
+    "activo": true,
+    "categoria": 1,
+    "marca": 2,
+    "proveedor": 1
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 3,
+  "fields": {
+    "nombre": "Bajo eléctrico Jazz Bass",
+    "descripcion": "Bajo eléctrico de 4 cuerdas, ideal para rock, jazz y funk",
+    "precio": "520000.00",
+    "precio_oferta": "470000.00",
+    "stock": 5,
+    "activo": true,
+    "categoria": 3,
+    "marca": 2,
+    "proveedor": 2
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 4,
+  "fields": {
+    "nombre": "Teclado Yamaha PSR-E383",
+    "descripcion": "Teclado portátil de 61 teclas, ideal para estudiantes y músicos",
+    "precio": "380000.00",
+    "precio_oferta": "350000.00",
+    "stock": 5,
+    "activo": true,
+    "categoria": 2,
+    "marca": 1,
+    "proveedor": 1
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 5,
+  "fields": {
+    "nombre": "Teclado Casio CT-S300",
+    "descripcion": "Teclado portátil de 61 teclas, con funciones de aprendizaje y diferentes sonidos\r\n5",
+    "precio": "290000.00",
+    "precio_oferta": "270000.00",
+    "stock": 10,
+    "activo": true,
+    "categoria": 2,
+    "marca": 3,
+    "proveedor": 2
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 6,
+  "fields": {
+    "nombre": "Batería Tama Imperialstar",
+    "descripcion": "Batería acústica completa, ideal para músicos y estudiantes",
+    "precio": "1250000.00",
+    "precio_oferta": null,
+    "stock": 3,
+    "activo": true,
+    "categoria": 4,
+    "marca": 4,
+    "proveedor": 4
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 7,
+  "fields": {
+    "nombre": "Cajón peruano Meinl",
+    "descripcion": "Instrumento de percusión de madera, ideal para música acústica y ritmos latinos",
+    "precio": "160000.00",
+    "precio_oferta": "145000.00",
+    "stock": 15,
+    "activo": true,
+    "categoria": 5,
+    "marca": 5,
+    "proveedor": 4
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 8,
+  "fields": {
+    "nombre": "Micrófono Shure SM58",
+    "descripcion": "Micrófono dinámico para voces, ideal para presentaciones en vivo y ensayos",
+    "precio": "210000.00",
+    "precio_oferta": "195000.00",
+    "stock": 15,
+    "activo": true,
+    "categoria": 6,
+    "marca": 6,
+    "proveedor": 3
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 9,
+  "fields": {
+    "nombre": "Amplificador Fender Frontman 10G",
+    "descripcion": "Amplificador de guitarra de 10 watts, ideal para practicar en casa",
+    "precio": "260000.00",
+    "precio_oferta": "240000.00",
+    "stock": 7,
+    "activo": true,
+    "categoria": 7,
+    "marca": 8,
+    "proveedor": 3
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 10,
+  "fields": {
+    "nombre": "Afinador Boss TU-3",
+    "descripcion": "Pedal afinador cromático para guitarra y bajo, con pantalla de alta visibilidad",
+    "precio": "185000.00",
+    "precio_oferta": "170000.00",
+    "stock": 14,
+    "activo": true,
+    "categoria": 8,
+    "marca": 7,
+    "proveedor": 3
+  }
+}
+]
