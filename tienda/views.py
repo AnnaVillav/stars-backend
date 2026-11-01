@@ -19,9 +19,11 @@ from .serializers import (
     MarcaSerializer,
     ProveedorSerializer,
     ProductoSerializer,
+    ProductoDetalleSerializer,
     ImagenProductoSerializer,
     ClienteSerializer,
     PedidoSerializer,
+    PedidoDetalleSerializer,
     DetallePedidoSerializer,
     PagoSerializer,
     EnvioSerializer,
@@ -53,6 +55,11 @@ class ProductoViewSet(viewsets.ModelViewSet):
     queryset = Producto.objects.all()
     serializer_class = ProductoSerializer
 
+    def get_serializer_class(self):
+        if self.action == "list":
+            return ProductoDetalleSerializer
+        return ProductoSerializer
+
 
 class ImagenProductoViewSet(viewsets.ModelViewSet):
     queryset = ImagenProducto.objects.all()
@@ -67,6 +74,11 @@ class ClienteViewSet(viewsets.ModelViewSet):
 class PedidoViewSet(viewsets.ModelViewSet):
     queryset = Pedido.objects.all()
     serializer_class = PedidoSerializer
+
+    def get_serializer_class(self):
+        if self.action == "list":
+            return PedidoDetalleSerializer
+        return PedidoSerializer
 
 
 class DetallePedidoViewSet(viewsets.ModelViewSet):

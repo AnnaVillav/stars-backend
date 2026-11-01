@@ -53,6 +53,15 @@ class ProductoSerializer(serializers.ModelSerializer):
         return attrs
 
 
+class ProductoDetalleSerializer(serializers.ModelSerializer):
+    categoria = CategoriaSerializer(read_only=True)
+    marca = MarcaSerializer(read_only=True)
+    proveedor = ProveedorSerializer(read_only=True)
+
+    class Meta:
+        model = Producto
+        fields = "__all__"
+
 class ImagenProductoSerializer(serializers.ModelSerializer):
     class Meta:
         model = ImagenProducto
@@ -76,6 +85,13 @@ class DetallePedidoSerializer(serializers.ModelSerializer):
         model = DetallePedido
         fields = "__all__"
 
+class PedidoDetalleSerializer(serializers.ModelSerializer):
+    cliente = ClienteSerializer(read_only=True)
+    detalles = DetallePedidoSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Pedido
+        fields = "__all__"
 
 class PagoSerializer(serializers.ModelSerializer):
     class Meta:
