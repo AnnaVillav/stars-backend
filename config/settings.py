@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     "django_filters",
+    'drf_spectacular',
     'tienda',
 
 
@@ -141,6 +142,7 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.TokenAuthentication",
        ],
 
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 5,
     "DEFAULT_FILTER_BACKENDS": [
@@ -148,4 +150,12 @@ REST_FRAMEWORK = {
         "rest_framework.filters.SearchFilter",
         "rest_framework.filters.OrderingFilter",
     ],
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "STARS API",
+    "DESCRIPTION": "API REST para la tienda de instrumentos musicales STARS.",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+    "REDOC_DIST": "https://cdn.jsdelivr.net/npm/redoc@2.5.0",
 }
