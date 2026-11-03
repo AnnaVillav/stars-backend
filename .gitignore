@@ -221,3 +221,6 @@ __marimo__/
 
 # Docker - Base de datos persistente
 data/
+
+# Archivos estáticos generados por Django
+staticfiles/
