@@ -3,6 +3,7 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from rest_framework.authtoken.views import obtain_auth_token
 from tienda.registro_views import RegistroUsuarioView
+from tienda.usuario_views import UsuarioActualView
 from drf_spectacular.views import (
     SpectacularAPIView,
     SpectacularSwaggerView,
@@ -43,6 +44,7 @@ urlpatterns = [
     path("api/", include(router.urls)),
     path("api/token/", obtain_auth_token, name="api_token"),
     path("api/registro/", RegistroUsuarioView.as_view(), name="registro_usuario"),
+    path("api/me/", UsuarioActualView.as_view(), name="usuario_actual"),
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
     path("api/swagger/", SpectacularSwaggerView.as_view(url_name="schema"), name="swagger-ui"),
     path("api/redoc/", SpectacularRedocView.as_view(url_name="schema"), name="redoc"),
